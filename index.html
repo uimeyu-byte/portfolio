@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Yuna Jeon creative designer portfolio" />
+  <title>YUNA Portfolio</title>
+  <meta name="title" content="Yuna Portfolio">
+  <meta name="description" content="무한 도전하고, 끊임없이 성장하는 디자이너 전유나 입니다.">
+  <meta name="keywords" content="영상편집, 디자인, 크리에이터">
+  <meta name="author" content="Yuna Portfolio">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="yuna portfolio">
+  <!-- 카톡썸네일 제목 -->
+  <meta property="og:title" content="YUNA PORTFOLIO">
+  <!-- 썸네일 설명 -->
+  <meta property="og:description" content="hello, wellcome my portfolio">
+  <!-- 썸네일 -->
+  <meta property="og:image" content="images/썸네일.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="#cover">YUNA JEON</a>
+
+    <nav class="main-nav" aria-label="메인 메뉴">
+      <a href="#cover" data-nav="cover">HOME</a>
+      <a href="#resume" data-nav="resume">RESUME</a>
+
+      <div class="work-menu">
+        <button class="work-trigger" id="workTrigger" type="button" aria-expanded="false">
+          WORK <span>⌄</span>
+        </button>
+        <div class="work-dropdown" id="workDropdown">
+          <a href="#web">WEB</a>
+          <a href="#poster">POSTER</a>
+          <a href="#detailed-page">DETAILED PAGE</a>
+          <a href="#video">VIDEO</a>
+        </div>
+      </div>
+
+      <a href="#goal" data-nav="goal">GOAL</a>
+    </nav>
+
+    <span class="year">2026</span>
+  </header>
+
+  <main>
+    <!-- cover -->
+    <section class="section cover-section" id="cover">
+      <div class="cover-stage">
+        <img src="images/cover/cassette-pastel.png" class="cover-device" alt="카세트 포트폴리오 플레이어" />
+
+        <div class="cover-lcd" aria-live="polite">
+          <small id="coverCount">01 / 06</small>
+          <h1 id="coverTitle">RESUME</h1>
+          <p id="coverDescription">경력, 교육, 스킬과 수상 이력을 소개합니다.</p>
+        </div>
+
+        <div class="cover-keys" id="coverKeys" aria-label="페이지 선택"></div>
+
+
+        <button class="cover-play" id="coverPlay" type="button" aria-label="선택한 페이지 열기"></button>
+
+        <div class="reel reel-left" aria-hidden="true"></div>
+        <div class="reel reel-right" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- resume -->
+    <section class="section pastel-section resume-section" id="resume">
+      <div class="page-number">01</div>
+      <div class="section-label">RESUME</div>
+
+      <div class="resume-case" aria-label="CD 앨범 형식 이력서">
+
+        <!-- 왼쪽 CD 영역 -->
+        <div class="case-half resume-disc-side">
+          <div class="disc-well">
+            <div class="disc-frame">
+              <img class="resume-disc" src="images/resume/cd-disc.png" alt="회전하는 앨범 CD" />
+
+              <div class="disc-hub" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 가운데 접히는 부분 -->
+        <div class="case-spine" aria-hidden="true"></div>
+
+        <!-- 오른쪽 Resume 정보 영역 -->
+        <div class="case-half resume-info-side">
+          <div class="resume-info-grid">
+
+            <article class="resume-block">
+              <h2>CAREER</h2>
+              <ul>
+                <li>
+                  <b>대구가톨릭대학교 교직원 계약직</b>
+                  <span>2024.02 ~ 2025.02</span>
+                </li>
+                <li>
+                  <b>유한산업 대표</b>
+                  <span>2018.09 ~ 2023.12</span>
+                </li>
+                <li>
+                  <b>일본 뉴오타니 호텔 인턴십</b>
+                  <span>2017.12 ~ 2018.02</span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="resume-block">
+              <h2>EDUCATION</h2>
+              <ul>
+                <li>
+                  <b>그린아트컴퓨터디자인 멀티미디어</b>
+                  <span>2026.04 ~ 2026.10</span>
+                </li>
+                <li>
+                  <b>대구대학교 관광경영학과</b>
+                  <span>2014.02 ~ 2018.09</span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="resume-block skills-block">
+              <h2>SKILLS</h2>
+
+              <div class="skill-grid">
+                <figure class="skill-item">
+                  <img src="images/skills/ai.png" alt="Illustrator" />
+                  <figcaption>Illustrator</figcaption>
+                </figure>
+
+                <figure class="skill-item">
+                  <img src="images/skills/ps.png" alt="Photoshop" />
+                  <figcaption>Photoshop</figcaption>
+                </figure>
+
+                <figure class="skill-item">
+                  <img src="images/skills/pr.png" alt="Premiere Pro" />
+                  <figcaption>Premiere Pro</figcaption>
+                </figure>
+
+                <figure class="skill-item">
+                  <img src="images/skills/ae.png" alt="After Effects" />
+                  <figcaption>After Effects</figcaption>
+                </figure>
+
+                <figure class="skill-item">
+                  <img src="images/skills/figma.png" alt="Figma" />
+                  <figcaption>Figma</figcaption>
+                </figure>
+
+                <figure class="skill-item">
+                  <img src="images/skills/vscode.png" alt="VS Code" />
+                  <figcaption>VS Code</figcaption>
+                </figure>
+              </div>
+            </article>
+
+            <article class="resume-block award-block">
+              <h2>AWARD</h2>
+              <p>
+                <b>코레일 여행 상품 공모전 장려상</b>
+                <span>2017.12</span>
+              </p>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- web -->
+    <section class="section pastel-section work-section" id="web">
+      <div class="page-number">02</div>
+      <div class="section-label">WEB</div>
+
+      <div class="web-layout content-shell">
+        <div class="mockup-cluster">
+          <img id="webMacbook" class="macbook-mockup" src="images/mockups/macbook-pro.png"
+            alt="MacBook Pro 웹 프로젝트 목업" />
+          <img id="webPhone" class="iphone-mockup" src="images/mockups/iphone.png" alt="iPhone 웹 프로젝트 목업" />
+        </div>
+
+        <aside class="web-copy">
+          <p class="small-label">BRAND WEBSITE DESIGN</p>
+          <h2>NATURE IN EVERY BREATH</h2>
+          <p>A brand website inspired by the breath of nature. Soft hierarchy and calm rhythm shape the experience.</p>
+          <div class="tool-row"><span>FIGMA</span><span>VS CODE</span></div>
+          <p class="replace-note">목업 교체: <code>images/mockups/</code></p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- poster -->
+    <section class="section pastel-section work-section" id="poster">
+      <div class="page-number">03</div>
+      <div class="section-label">POSTER</div>
+      <div class="poster-stage content-shell" id="posterGrid"></div>
+    </section>
+
+    <!-- detailde page -->
+    <section class="section pastel-section work-section" id="detailed-page">
+      <div class="page-number">04</div>
+      <div class="section-label">DETAILED PAGE</div>
+
+      <div class="detail-layout content-shell">
+        <div class="detail-copy left-copy">
+          <p class="small-label">MOBILE UI / DETAILS</p>
+          <h2>SERENE JOURNEY</h2>
+          <p>Travel App UI Design</p>
+          <h3>OVERVIEW</h3>
+          <p>A calm mobile experience with clear hierarchy and immersive imagery.</p>
+          <h3>VISUAL FOCUS</h3>
+          <p>Pastel blue, quiet spacing, soft contrast.</p>
+        </div>
+
+        <div class="detail-phone-wrap">
+          <img id="detailPhone" src="images/mockups/iphone.png" alt="상세페이지 iPhone 목업" />
+        </div>
+
+        <div class="detail-copy right-copy">
+          <h3>SMOOTH FLOW</h3>
+          <p>Intuitive navigation and an easy reading rhythm.</p>
+          <h3>EMOTIONAL TOUCH</h3>
+          <p>Soft imagery supports the storytelling.</p>
+          <h3>ROLE</h3>
+          <p>UI/UX Design · 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- video -->
+    <section class="section video-section work-section" id="video">
+      <div class="page-number">05</div>
+      <div class="section-label">VIDEO</div>
+
+      <div class="video-layout content-shell">
+        <div class="video-main">
+          <div class="youtube-frame">
+            <iframe id="youtubePlayer" src="" title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-thumbs" id="videoThumbs"></div>
+        </div>
+
+        <aside class="video-copy" id="videoDescription"></aside>
+      </div>
+    </section>
+
+    <!-- goal -->
+    <section class="section pastel-section goal-section" id="goal">
+      <div class="page-number">06</div>
+      <div class="section-label">GOAL</div>
+
+      <div class="goal-wrap">
+        <img class="goal-feather" src="images/goal-feather.png" alt="" aria-hidden="true" />
+
+        <div class="goal-card">
+          <p class="goal-kicker">LET'S CREATE<br>SOMETHING BEAUTIFUL TOGETHER.</p>
+          <h2>MEMO</h2>
+
+          <form id="contactForm">
+            <div class="field-row">
+              <input id="contactName" name="name" type="text" placeholder="NAME" required />
+              <input id="contactEmail" name="email" type="email" placeholder="E-MAIL" required />
+            </div>
+            <textarea id="contactMessage" name="message" placeholder="MESSAGE" required></textarea>
+            <button type="submit">SEND MESSAGE</button>
+            <p id="formStatus"></p>
+          </form>
+
+          <p class="mail-hint">메일 주소 수정: <code>js/content.js → contactEmail</code></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Poster modal -->
+  <div class="poster-modal" id="posterModal" hidden>
+    <div class="poster-modal-backdrop" data-close-modal></div>
+    <article class="poster-modal-card">
+      <button class="poster-modal-close" type="button" data-close-modal aria-label="닫기">×</button>
+      <img id="posterModalImage" src="" alt="" />
+      <div id="posterModalCopy" class="poster-modal-copy"></div>
+    </article>
+  </div>
+
+  <script src="js/content.js?v=13"></script>
+  <script src="js/main.js?v=13"></script>
+</body>
+
+</html>
