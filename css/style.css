@@ -329,24 +329,24 @@ img {
 .cover-key::after {
   content: "";
   position: absolute;
-  inset: 5%;
-  border-radius: 10%;
+  inset: 8%;
+  border-radius: 12%;
   opacity: 0;
+  background: transparent;
   box-shadow:
-    inset 0 0 0 1px rgba(222, 242, 255, .72),
-    0 0 12px rgba(91, 156, 207, .28);
-  background: rgba(183, 218, 242, .05);
-  transition: opacity .18s ease, transform .18s ease;
+    0 6px 16px rgba(47, 92, 128, .34),
+    0 0 20px rgba(118, 188, 235, .34);
+  transition: opacity .2s ease, box-shadow .2s ease;
+  pointer-events: none;
 }
 
 .cover-key:hover::after,
 .cover-key.active::after {
   opacity: 1;
-  transform: translate(-10px, -6px);
 }
 
 .cover-key:active {
-  transform: translateY(2px);
+  transform: none;
 }
 
 .cover-play {
@@ -1792,5 +1792,389 @@ img {
 
   .poster-modal-copy {
     padding: 28px;
+  }
+}
+
+
+/* =========================================================
+   FINAL RESPONSIVE FIXES 2026-07
+   1) mobile/tablet header nav centered
+   2) WORK arrow aligned next to text
+   3) page labels aligned consistently
+   4) goal form made responsive
+========================================================= */
+
+/* Header: keep the nav visually centered on every size */
+.site-header {
+  grid-template-columns: minmax(130px, 1fr) auto minmax(80px, 1fr);
+}
+
+.main-nav {
+  justify-self: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.work-menu {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* 기존 absolute 화살표를 해제해서 WORK 글자 옆 중앙에 붙임 */
+.work-trigger span {
+  position: static;
+  top: auto;
+  margin-left: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: .85em;
+  transform: translateY(1px);
+}
+
+.work-dropdown {
+  top: calc(100% + 3px);
+}
+
+/* Page label: 모든 페이지의 번호/제목 기준을 통일 */
+.page-number,
+.section-label {
+  pointer-events: none;
+}
+
+/* Goal form base safeguard */
+.goal-card form,
+#contactForm {
+  width: 100%;
+}
+
+.goal-card input,
+.goal-card textarea,
+.goal-card button {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* ---------- laptop / tablet ---------- */
+@media (max-width: 1250px) {
+  .site-header {
+    padding-inline: clamp(18px, 3vw, 34px);
+  }
+
+  .main-nav {
+    gap: clamp(18px, 3vw, 30px);
+  }
+}
+
+@media (max-width: 1100px) {
+  :root {
+    --header: 76px;
+  }
+
+  .site-header {
+    height: var(--header);
+    grid-template-columns: minmax(110px, 1fr) auto minmax(52px, 1fr);
+  }
+
+  .main-nav {
+    gap: clamp(16px, 3vw, 26px);
+  }
+
+  .main-nav > a,
+  .work-trigger {
+    padding: 27px 0 22px;
+    font-size: 12px;
+  }
+
+  .work-dropdown {
+    top: calc(100% - 2px);
+    width: 172px;
+  }
+
+  /* 각 섹션 제목을 같은 위치에 정렬 */
+  .page-number {
+    top: calc(var(--header) + 16px);
+    left: 50%;
+    width: 28px;
+    height: 28px;
+    transform: translateX(-84px);
+  }
+
+  .section-label {
+    top: calc(var(--header) + 19px);
+    left: 50%;
+    transform: translateX(-44px);
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .content-shell,
+  .resume-case,
+  .goal-wrap {
+    margin-top: 48px;
+  }
+
+  /* web/detail/video가 세로로 바뀔 때 상단 여백을 확보 */
+  .web-layout,
+  .detail-layout,
+  .video-layout {
+    align-content: center;
+  }
+
+  /* Goal form tablet */
+  .goal-wrap {
+    width: min(760px, 92vw);
+    min-height: auto;
+    padding: 110px 28px 72px;
+  }
+
+  .goal-card {
+    width: min(680px, 100%);
+    padding: clamp(32px, 5vw, 46px);
+  }
+
+  .goal-feather {
+    top: 34px;
+    right: 5%;
+    width: min(220px, 26vw);
+    max-height: none;
+  }
+}
+
+/* ---------- mobile ---------- */
+@media (max-width: 760px) {
+  :root {
+    --header: 92px;
+  }
+
+  .site-header {
+    height: var(--header);
+    grid-template-columns: 1fr;
+    grid-template-rows: 22px 1fr;
+    justify-items: center;
+    align-items: center;
+    row-gap: 4px;
+    padding: 8px 12px 10px;
+  }
+
+  .brand {
+    justify-self: center;
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  .main-nav {
+    justify-self: center;
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(10px, 3.2vw, 18px);
+    flex-wrap: nowrap;
+  }
+
+  .main-nav > a,
+  .work-trigger {
+    padding: 8px 0 9px;
+    font-size: clamp(9px, 2.4vw, 11px);
+    line-height: 1;
+  }
+
+  .main-nav > a::after,
+  .work-trigger::after {
+    bottom: 2px;
+  }
+
+  .work-trigger span {
+    font-size: .85em;
+    transform: translateY(.5px);
+  }
+
+  .work-dropdown {
+    top: calc(100% + 7px);
+    width: 156px;
+    left: 50%;
+  }
+
+  .work-dropdown a {
+    padding: 11px 12px;
+    font-size: 10px;
+  }
+
+  .section {
+    min-height: auto;
+    padding: calc(var(--header) + 58px) 18px 64px;
+    overflow: visible;
+  }
+
+  .cover-section {
+    min-height: 100vh;
+    overflow: hidden;
+    padding: var(--header) 0 0;
+  }
+
+  .cover-stage {
+    width: 960px;
+    height: auto;
+    max-width: none;
+    transform: scale(.62);
+    transform-origin: center center;
+  }
+
+  /* 모바일에서도 페이지 제목 위치를 모두 같게 */
+  .page-number {
+    top: calc(var(--header) + 18px);
+    left: 50%;
+    width: 26px;
+    height: 26px;
+    transform: translateX(-74px);
+    font-size: 10px;
+  }
+
+  .section-label {
+    top: calc(var(--header) + 21px);
+    left: 50%;
+    transform: translateX(-34px);
+    font-size: 18px;
+  }
+
+  .content-shell,
+  .resume-case,
+  .goal-wrap {
+    margin-top: 0;
+  }
+
+  /* Web mockup mobile spacing */
+  .web-layout {
+    gap: 26px;
+  }
+
+  .mockup-cluster {
+    width: 100%;
+    height: min(520px, 95vw);
+  }
+
+  .web-copy {
+    padding: 0;
+    text-align: center;
+  }
+
+  .tool-row {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Detail titles and copy stay readable */
+  .detail-layout {
+    gap: 24px;
+  }
+
+  .detail-copy h2 {
+    font-size: clamp(26px, 8vw, 34px);
+  }
+
+  .detail-copy h3,
+  .detail-copy p {
+    font-size: clamp(13px, 4vw, 16px);
+  }
+
+  /* Goal form mobile fix */
+  .goal-section {
+    align-items: flex-start;
+  }
+
+  .goal-wrap {
+    width: 100%;
+    min-height: auto;
+    padding: 62px 0 0;
+    display: grid;
+    place-items: center;
+  }
+
+  .goal-card {
+    width: min(100%, 560px);
+    padding: 28px 20px;
+    border-radius: 16px;
+  }
+
+  .goal-feather {
+    top: -36px;
+    right: 8px;
+    width: min(150px, 34vw);
+    max-height: none;
+    opacity: .7;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .goal-card input,
+  .goal-card textarea,
+  .goal-card button {
+    width: 100%;
+    min-height: 46px;
+    padding: 13px 14px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  .goal-card textarea {
+    height: 136px;
+    margin-top: 10px;
+  }
+
+  .goal-card button {
+    margin-top: 12px;
+  }
+
+  .mail-hint {
+    line-height: 1.5;
+    word-break: keep-all;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    padding-inline: 10px;
+  }
+
+  .main-nav {
+    gap: clamp(7px, 2.4vw, 11px);
+  }
+
+  .main-nav > a,
+  .work-trigger {
+    font-size: 9px;
+  }
+
+  .work-dropdown {
+    width: 144px;
+  }
+
+  .page-number {
+    transform: translateX(-66px);
+  }
+
+  .section-label {
+    transform: translateX(-28px);
+    font-size: 16px;
+  }
+
+  .goal-card {
+    padding: 24px 16px;
   }
 }
